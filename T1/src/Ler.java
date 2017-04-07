@@ -25,17 +25,18 @@ public class Ler {
 			return 0;
 	}
 
-	public float lerVelHorizontal (float num) {
+	public float lerVelHorizontal (float aux) {
+		System.out.println ("\nDigite velocidade vertical inical: ");
 		s = new Scanner(System.in);
 		num = s.nextInt();
 		aux = num;
 	if(num > 10) {
-		System.out.println("Valocidade Horizontal Max Excedida\n" +
+		System.out.println("\nValocidade Horizontal Max Excedida\n" +
 				"Valor maximo permitido é 10 m/s\n");
-		return lerVelHorizontal(num); }
+		return lerVelHorizontal(aux); }
 	else {
-		 num = aux;}
+		 dr.velHorizontal = aux;}
 	return 0;
 	}
-
+	
 }

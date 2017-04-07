@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Principal {
 	public static void main (String args[]) {
@@ -65,9 +66,57 @@ public class Principal {
 		ler.dr = drone1;
 		
 		ler.lerVelVertical(drone1.velVertical);
+		System.out.println("Velocidade Inicial Vertical: " + drone1.velVertical + " m/s");
+	
+		ler.lerVelHorizontal(drone1.velHorizontal);
+		System.out.println("\nVelocidade Horizontal inicial: " + drone1.velHorizontal + " m/s");
+	
+		System.out.println("\nVelocidade Vertical:\nAumentar - digite 1\nDiminuir - digite 2");
+		Scanner s = new Scanner(System.in);
+		int opcao = s.nextInt();
+		if (opcao == 1) {
+			
+		if (drone1.velVertical == 10) {
+		System.out.println("Velocidade vertical Maxima Excecida!");}
 		
-		System.out.println("Velocidade Inicial: " + drone1.velVertical + " m/s");
+		else {c1.aumentarVelVertical();
+			System.out.println("Velocidade Vertical atual: " + drone1.velVertical + "m/s");}
+		}	
+	
+		if(opcao == 2) {
+			if (drone1.velVertical <= 0) {
+				System.out.println("\n 0 ()zero é o valor minimo para velocidade!");}
+			else  {c1.diminuirVelVertical(); 
+				System.out.println("\nVelocidade Vertical atual: " + drone1.velVertical + " m/s");}
+			} 
+		
+		
+		System.out.println("\nVelocidade Horizontal:\nAumentar - digite 1\nDiminuir - digite 2");
+		Scanner s2 = new Scanner(System.in);
+		int opcao2 = s2.nextInt();
+		
+		if (opcao2 == 1) {
+		if (drone1.velHorizontal == 10) {
+		System.out.println("\nVelocidade Horizontal Maxima Excecida!");}
+		
+		else {c1.aumentarVelHorizontal();
+			System.out.println("\nVelocidade Horizontal atual: " + drone1.velHorizontal + "m/s");}
+		}	
+	
+		if(opcao2 == 2) {
+		if (drone1.velHorizontal <= 0) {
+			System.out.println("\n 0 (zero) é o valor minimo para velocidade!");}
+		
+		else  {c1.diminuirVelHorizontal(); 
+				System.out.println("\nVelocidade Horizontal atual: " + drone1.velHorizontal + " m/s");}
+			} 
+	
+		System.out.println("\nCamera:\nLigar - digite 1\nDesligar - digite 2");
+		Scanner s3 = new Scanner(System.in);
+		int opcao3 = s3.nextInt();
+		
+		if(opcao3 == 1) {c1.iniciarCamera();}
+		
+		else if (opcao3 == 2) {c1.interromperCamera();}
 	}
-	
-	
 }
